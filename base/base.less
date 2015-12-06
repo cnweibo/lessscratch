@@ -1,0 +1,530 @@
+/* file start: /home/vagrant/Code/kidsit/resources/assets/less/base/base.less*/
+//Fonts
+// @import url(http://fonts.googleapis.com/css?family=Quicksand:400,700);
+// @import "vars.less";
+// @import "../../bower_components/bootstrap/less/mixins.less";
+// @import "../base/mymixins.less";
+//General
+body{
+	font-family: @regular-font;
+  overflow-x: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.wrapper{
+	overflow: hidden;
+}
+
+//Links
+a{
+	color: @secondary-color;
+	.transition(all 300ms ease-in);
+}
+
+a:hover{
+	color: @primary-color;
+	text-decoration: none;
+}
+
+a:focus{
+	text-decoration: none;
+}
+
+a:focus,
+a:active,
+a:hover {
+    outline: none;
+}
+
+.breadcrumb a:hover{
+  color: @secondary-color;
+}
+
+//Typography
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	margin-top: 60px;
+	margin-bottom: 31px;
+	font-family: @brand-font;
+	color: @primary-color;
+}
+
+h1{
+	font-size: 28px;
+}
+
+h2{
+	font-size: 26px;
+}
+
+h3{
+	font-size: 24px;
+	line-height: 30px;
+}
+
+h4{
+	font-size: 22px;
+}
+
+h5{
+	font-size: 20px;
+}
+
+h6{
+	font-size: 16px;
+}
+
+.smaller-top-space{
+	margin-top: 43px;
+}
+
+p{
+	color: #737c85;
+	line-height: 26px;		
+}
+
+.p-space{
+	margin-bottom: 28px;
+}
+
+.p-null{
+	margin-bottom: 0;
+}
+
+
+// Form
+// prevent iOS default form style
+input,
+textarea{
+	-webkit-appearance: none;
+	-webkit-border-radius: 0;
+	border-radius: 0;
+
+	&:focus{
+		outline: none;
+	}
+}
+
+input[type="search"] {
+	-webkit-appearance: none;
+    -moz-box-sizing: border-box; /* Firefox */  
+    box-sizing: border-box;
+
+    &:focus{
+		outline: none;
+	}
+}
+
+button{
+    &:focus{
+		outline: none;
+	}
+}
+
+//disable textarea resize
+textarea{
+	resize:none;
+}
+
+// Buttons
+.btn:hover,
+.btn:focus{
+   color:@null-color;
+  }
+
+//Set placeholder color visibility
+
+// WebKit browsers
+::-webkit-input-placeholder { 
+    opacity:  1 !important;
+    color: @primary-color;
+}
+
+input[type="search"]::-webkit-input-placeholder { 
+    color: #758594;
+}
+
+.footer--contact,
+.footer--info,
+.contact--icon{
+  ::-webkit-input-placeholder {  
+    color: #758594;
+  }
+}
+
+.footer--expand{
+	::-webkit-input-placeholder { 
+	    color: @null-color;
+	}
+}
+
+.footer--light{
+  ::-webkit-input-placeholder {  
+    color: @primary-color;
+  }
+}
+// Mozilla Firefox 4 to 18
+:-moz-placeholder { 
+    opacity:  1;
+}
+
+//Mozilla Firefox 19+
+::-moz-placeholder {  
+    opacity:  1;
+}
+
+//Form validation
+.form-error{
+  overflow: hidden;
+	padding-top: 0px !important;
+	padding-bottom: 0px !important;
+}
+
+.form-error .form-error__holder .inv-em{
+  margin-bottom: 0;
+}
+
+.form-error .form-error__holder .inv-em:first-child{
+  padding-top: 20px;
+}
+
+.form-error .form-error__holder .inv-em:last-child{
+  padding-bottom: 17px;
+}
+
+.form-error .inv-em + p{
+	margin-top: 0;
+}
+
+
+
+.inv-em{
+	width: 100%;
+	color: @primary-color;
+}
+
+ .contact .contact__field.invalid_field{
+	width: 100%;
+	border: 1px solid @danger-color;
+}
+
+.success{
+	padding-top: 30%;
+	padding-bottom: 20%;
+	font-size: 18px;
+	text-align: center;
+	color: @primary-color;
+
+	.success__icon{
+		display: inline-block;
+		padding-top: 30px;
+		width: 80px;
+		height: 80px;
+		font-size: 22px;
+		text-align: center;
+		color: @null-color;
+		background-color: #8dc63f;
+		.border-radius(50%);
+	}
+
+	.success__lead{
+		display: block;
+		font-size: 22px;
+		padding-top: 30px;
+		padding-bottom: 7px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}
+
+//Lists
+ul, ol{
+	font-style: italic;
+	color: @primary-color;
+	margin-bottom: 0;
+}
+
+.not-visible{
+	display: none;
+}
+
+//divider
+.divider{
+	width: 100%;
+	height: 1px;
+	background-color: #dfe6e7;
+}
+
+.divider--double{
+  background: none;
+  border-bottom: 3px double #dfe6e7;
+}
+
+.divider--double-dotted{
+  height: 3px;
+  background: none;
+  // border-bottom: 1px dotted @primary-color;
+  border-top: 1px dotted #57687a;
+  border-bottom: 1px dotted #57687a;
+}
+
+.divider--dotted{
+  background: none;
+  border-bottom: 1px dotted #57687a;
+}
+
+.divider--colored{
+  position: relative;
+
+  .divider-dot{
+    position: absolute;
+    top: -4px;
+    left: 50%;
+    margin-left: -4px;
+    width: 8px;
+    height: 8px;
+    background: @secondary-color;
+    .border-radius(50%);
+
+    &:before,
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 8px;
+      height: 8px;
+      .border-radius(50%);
+    }
+
+    &:before{
+      left: -20px;
+      background: @warning-color;
+    }
+
+    &:after{
+      right: -20px;
+      background: @danger-color;
+    }
+  }
+}
+
+.divider--icon{
+  position: relative;
+
+  &:before{
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    width: 29px;
+    height: 29px;
+    margin-left: -14px;
+    background: @secondary-color;
+    .border-radius(50%);
+  }
+
+  &:after{
+    content: "\f1d8";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -6px;
+    margin-top: -8px;
+    font-size: 12px;
+    font-family: FontAwesome;
+    color: @null-color;
+  }
+}
+
+
+.divider--dark{
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.divider-brand{
+	position: relative;
+	margin-top: 0px;
+	border-bottom: 1px solid #dfe6e7;
+
+	&:before{
+		content: "";
+		position: absolute;
+		bottom: -1px;
+		left: 50%;
+		width: 80px;
+		height: 3px;
+		margin-left: -40px;
+		background-color: @secondary-background;
+	}
+}
+
+.divider-brand--special{
+  &:before{
+    background-color: @special-color;
+  }
+}
+
+.divider--top-larger-b{
+	margin-top: 90px;
+}
+
+.divider--top-universal{
+	margin-top: 60px;
+}
+
+.divider--top-larger{
+	margin-top: 80px;
+}
+
+.divider--top-large{
+	margin-top: 50px;
+}
+
+.divider--top-xs{
+	margin-top: 10px;
+}
+
+.divider--top{
+	margin-top: 20px;
+}
+
+.divider--top2x{
+	margin-top: 40px;
+}
+
+.divider--thin{
+	margin-top: 10px;
+}
+
+.divider--middle{
+	margin-top: 30px;
+}
+
+.bottom-universal{
+	margin-bottom: 40px;
+}
+
+.divider--bottom-thin{
+	margin-bottom: 20px;
+}
+
+.divider--bottom-s{
+	margin-bottom: 30px;
+}
+
+.divider--bottom-sm{
+	margin-bottom: 34px;
+}
+
+.divider--bottom-m{
+	margin-bottom: 51px;
+}
+
+.divider--bottom-md{
+	margin-bottom: 64px;
+}
+
+.divider--bottom{
+	margin-bottom: 68px;
+}
+
+.divider--bottom-lg{
+	margin-bottom: 80px;
+}
+
+.divider-color{
+	width: 100%;
+	height: 3px;
+	background-image: url("../images/components/stripe.png");
+	background-repeat: repeat-x;
+}
+
+.divider-color-special{
+  background-image: url("../images/components/strip-top.png");
+}
+
+.top-space{
+	margin-bottom: 120px;
+}
+
+.bottom-space{
+	margin-top: 120px;
+}
+
+.bottom-space--smaller{
+	margin-top: 105px;
+}
+
+.bottom-space--small{
+	margin-top: 100px;
+}
+
+.bottom-space--uni{
+	margin-top: 90px;
+}
+
+.bottom-space--m{
+	margin-top: 80px;
+}
+
+.bottom-space--md{
+	margin-top: 60px;
+}
+
+.bottom-space--sm{
+	margin-top: 40px;
+}
+
+.present-addition{
+	margin-top: -10px;
+}
+
+.present-addition-lg{
+	margin-top: -20px;
+}
+
+.present-addition-huge{
+  margin-top: -30px;
+}
+
+// mega menu helper
+.skip-element{
+  position: static !important;
+}
+
+.relative-block{
+  position: relative;
+}
+
+//Colors
+.color-block{
+	display: block;
+	width: 70px;
+	height: 70px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+.color-primary{
+	background-color: @primary-color;
+}
+
+.color-secondary{
+	background-color: @secondary-color;
+}
+
+.color-warning{
+	background-color: @warning-color;
+}
+
+.color-danger{
+	background-color: @danger-color;
+}
+
+// customized mixins moved to mymixins.less/* file end: /home/vagrant/Code/kidsit/resources/assets/less/base/base.less*/
