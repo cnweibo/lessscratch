@@ -1,4 +1,4 @@
-/* file start: /home/vagrant/Code/kidsit/resources/assets/less/objects/objects.less*/
+
 
 // Headings
 // @import "../../bower_components/bootstrap/less/variables.less";
@@ -578,15 +578,134 @@
 		width: 100%;
 	}
 }
+	.timer-input{
+		display: none;
+	}
+
+	.timer-wrap{
+		width: 185px;
+		margin: 0 15px 20px;
+		display: inline-block;
+		background: fade(@warning-color, 10%);
+		border-bottom: 5px solid @warning-color;
+	}
+
+	.timer-wrap--hour{
+		background: fade(@secondary-color, 10%);
+		border-bottom: 5px solid @secondary-color;
+	}
+
+	.timer-wrap--min{
+		background: fade(@null-color, 10%);
+		border-bottom: 5px solid @null-color;
+	}
+
+	.timer-wrap--sec{
+		background: fade(@danger-color, 10%);
+		border-bottom: 5px solid @danger-color;
+	}
+
+	.digits{
+		display: block;
+		margin-top: 34px;
+		margin-bottom: -6px;
+		font-family: @regular-font;
+		font-size: 80px;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: @null-color;
+	}
+
+	.digits-label{
+		margin-bottom: 18px;
+		font: 30px "Georgia", serif;
+		font-style: italic;
+		color: @null-color;
+	}
+}
 
 
 
+//number container
+.number-container{
+	padding-bottom: 60px;
+	background-color: @secondary-background;
 
+	.stat--shape{
+		border-color: @null-color;
 
+		&:after,
+		&:before{
+			background-color: @null-color;
+		}
+	}
+}
 
+//special
+.special{
+	min-height: 385px;
+	padding-top: 47px;
+	background-color: @secondary-background;
+	text-align: center;
+	background-image: url(../images/components/browser.png);
+	background-repeat: no-repeat;
+	background-position: 50% 100%;
+	background-size: 580px 238px; 
 
+	.special__text{
+		font-size: 16px;
+		color: @null-color;
+		font-style: italic;
+	}
 
+	.special__price{
+		position: relative;
+		margin-top: 110px;
+		margin-bottom: 22px;
+		font: 50px @brand-font;
+		color: @primary-color;
 
+		&:before{
+			content: "{";
+			font: 50px @brand-font;
+			color: #e1e8e9;
+			margin-right: 13px;
+		}
+
+		&:after{
+			content: "}";
+			font: 50px @brand-font;
+			color: #e1e8e9;
+			margin-left: 13px;
+		}
+	}
+
+	.special-inner{
+		position: relative;
+
+		&:before{
+			content: "{";
+			position: absolute;
+			top: 50%;
+			left: 25px;
+			margin-top: -100px;
+			font: 200px @brand-font;
+			color: rgba(255, 255, 255, 0.2);
+			margin-right: 13px;
+		}
+
+		&:after{
+			content: "}";
+			position: absolute;
+			top: 50%;
+			right: 25px;
+			margin-top: -100px;
+			font: 200px @brand-font;
+			color: rgba(255, 255, 255, 0.2);
+			margin-left: 13px;
+		}
+	}
+}
 
 .subscribe-container{
 	padding-top: 115px;
@@ -1044,4 +1163,4 @@
   color: @null-color;
   background: @primary-color;
 }
-/* file end: /home/vagrant/Code/kidsit/resources/assets/less/objects/objects.less*/
+

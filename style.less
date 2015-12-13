@@ -1,4 +1,4 @@
-/* file start: /home/vagrant/Code/kidsit/resources/assets/less/style.less*/
+
 
 //Base rules (bootstrap core with normalize)
 @import  "../bower_components/bootstrap/less/variables.less";
@@ -8,7 +8,7 @@
 @import  "../bower_components/bootstrap/less/scaffolding.less";
 // @import "../bower_components/bootstrap/less/type.less";
 @import  "base/base.less";
-@import  "base/customized.less";
+// @import  "base/customized.less"; 
 @import  "base/mymixins.less"; 
  
 //Layout rules
@@ -17,11 +17,16 @@
 // @import  "../bower_components/bootstrap/less/responsive-utilities.less";
  
 
+// helper rules
+@import  "helpers/utilities.less"; 
+@import  "mixins/mixinlib.less"; 
+
+
 //Objects rules 
-@import  "objects/header/header.less";
-@import  "objects/footer/footer.less";
-@import  "objects/sliders.less";
-@import  "objects/slider/royal-slider.less";
+@import  "objects/page-components/header/header.less";
+@import  "objects/page-components/footer/footer.less";
+@import  "objects/page-components/slider/sliders.less";
+@import  "objects/page-components/slider/royal-slider.less";
 // @import  "objects/modals.less";
 // @import  "objects/forms.less";
 // @import "objects/gallery.less";  
@@ -39,24 +44,28 @@
 // @import  "objects/widgets.less";
 // @import "objects/rocket.less";
 @import  "objects/objects.less";
-@import  "objects/button/button.less";
-@import  "objects/button/btn-variants.less";
-@import  "objects/button/button--decorated.less";
+@import  "objects/atomic-elements/button/button.less";
+@import  "objects/atomic-elements/button/btn-variants.less";
+@import  "objects/atomic-elements/button/button--decorated.less";
 @import  "objects/banner-control.less";
-@import  "objects/post/post.less";
-@import  "objects/post/other-post.less";
-@import  "objects/post/post--latest.less";
+@import  "objects/page-components/post/post.less";
+@import  "objects/page-components/post/other-post.less";
+@import  "objects/page-components/post/post--latest.less";
 @import  "objects/image.less";
 @import  "objects/heading.less";
 @import  "objects/contactinfo.less";
-@import  "objects/social/social.less";
-@import  "objects/search/searchbar.less"; 
-@import  "objects/service/service.less";
-@import  "objects/special-price.less";
+@import  "objects/page-components/social/social.less";
+@import  "objects/page-components/search/searchbar.less"; 
+@import  "objects/page-components/service/service.less";
+
+@import  "objects/page-components/scrolltotop/top-scroll.less";
+
+@import  "../bower_components/bootstrap/less/variables.less";
+@import  "objects/preload-animation.less"; 
 
  
 
-@import  "objects/subscribe/subscribe.less";
+@import  "objects/page-components/subscribe/subscribe.less";
 
 
 
@@ -69,4 +78,8 @@
 @import  "state/state.less";
 // @import  "state/responsive.less";
 // @import "state/style-rtl.less";
-/* file end: /home/vagrant/Code/kidsit/resources/assets/less/style.less*/
+
+.testcss{
+	.skin(#113,#223,#333);  
+	.dimension(24px, 1.5,5px,30px); 
+} 
